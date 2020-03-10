@@ -16,12 +16,25 @@ These instructions will get you a copy of the project up and running on your loc
 
 Inside your strapi project run the following
 
-```sh
+```
 yarn add strapi-provider-upload-azure-storage
 
 # or
 
 npm install strapi-provider-upload-azure-storage
+```
+
+Edit custom configuration in Strapi project 
+`config/custom.json`
+
+you need to add 
+```
+  "azure": {
+    "accountName": "${process.env.AZURE_ACCOUNT_NAME}",
+    "secretAccessKey": "${process.env.AZURE_SECRET_ACCESS_KEY}",
+    "containerName": "${process.env.AZURE_CONTAINER_NAME}",
+    "cdnEndpoint": "${process.env.AZURE_CDN_ENDPOINT}"
+  }
 ```
 
 ## Contributing
@@ -34,6 +47,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
+* **Jakub Rybiński** - *Add image optimization and move configuration into ENVs* - [jrybinski](https://github.com/jrybinski)
 * **Jake Feldman** - *Initial work* - [jakeFeldman](https://github.com/jakeFeldman)
 
 ## License
